@@ -1,11 +1,7 @@
 require "spec_helper"
 
-RSpec.describe Rabbit::Notification do
+RSpec.describe FDE::Rabbit::Notification do
   it "has a version number" do
-    expect(Rabbit::Notification::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(false).to eq(true)
+    expect(FDE::Rabbit::Notification::VERSION).not_to be nil
   end
 end
