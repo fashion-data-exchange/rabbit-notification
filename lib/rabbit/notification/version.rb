@@ -1,7 +1,7 @@
 module FDE
   module Rabbit
     module Notification
-      VERSION = "0.1.0"
+      VERSION = "0.1.2"
     end
   end
 end
