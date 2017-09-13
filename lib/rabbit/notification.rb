@@ -1,6 +1,6 @@
 require "rabbit/notification/version"
-require "rabbit/notification/message"
-require "rabbit/notification/connection"
+require "rabbit/message"
+require "rabbit/connection"
 require 'bunny'
 require 'json'
 

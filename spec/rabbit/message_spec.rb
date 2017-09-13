@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe FDE::Rabbit::Notification::Message do
+RSpec.describe FDE::Rabbit::Message do
   let(:exchange_name) { 'fde.edi' }
   subject {
-    FDE::Rabbit::Notification::Message.new(exchange_name)
+    described_class.new(exchange_name)
   }
 
   let(:key_out) { 'fde.edi.out' }

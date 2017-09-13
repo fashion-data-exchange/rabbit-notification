@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe FDE::Rabbit::Notification::Connection do
+RSpec.describe FDE::Rabbit::Connection do
   subject { described_class.new }
 
   describe 'self.new' do
