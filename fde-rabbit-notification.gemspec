@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "rabbit/notification/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rabbit-notification"
+  spec.name          = "fde-rabbit-notification"
   spec.version       = FDE::Rabbit::Notification::VERSION
   spec.authors       = ["Felix Langenegger"]
   spec.email         = ["f.langenegger@fadendaten.ch"]
