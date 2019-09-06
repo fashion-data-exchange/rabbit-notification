@@ -1,14 +1,14 @@
 require "spec_helper"
 
 RSpec.describe FDE::Rabbit::Message do
+  let(:payload) { { msg:'hello' }.to_json }
   let(:exchange_name) { 'fde.edi' }
   subject {
-    described_class.new(exchange_name)
+    described_class.new(payload, exchange_name)
   }
 
   let(:key_out) { 'fde.edi.out' }
   let(:key_in) { 'fde.edi.out' }
-  let(:message) { { msg:'hello' }.to_json }
 
   let(:queue_out) { Bunny::Queue.new(subject.channel, 'fde.edi.out')}
   let(:queue_in) { Bunny::Queue.new(subject.channel, 'fde.edi.in')}
@@ -26,9 +26,9 @@ RSpec.describe FDE::Rabbit::Message do
   end
 
   describe 'methods' do
-    describe '#send' do
+    describe '#deliver' do
       it 'should add a message to the exchange' do
-        subject.send(message, key_out)
+        subject.deliver(key_out)
         sleep(1)
         expect(queue_out.message_count).to eq(1)
         expect(queue_in.message_count).to eq(0)

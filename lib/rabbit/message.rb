@@ -4,15 +4,17 @@ module FDE
       attr_accessor :conneciton,
         :channel,
         :exchange,
-        :name
+        :name,
+        :payload
 
-      def initialize(exchange_name)
+      def initialize(payload, exchange_name)
+        @payload = payload
         @name = exchange_name
       end
 
-      def send(message, key)
+      def deliver(key)
         start
-        exchange.publish(message, routing_key: key)
+        exchange.publish(payload, routing_key: key)
       end
 
       def connection
